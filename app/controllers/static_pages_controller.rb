@@ -1,13 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home
-    puts "****************"
-    puts current_user
-    puts current_user
-    puts current_user
-    puts current_user
-    puts current_user
-    puts current_user
-    puts "****************"    
+  def home    
   end
 
   def help

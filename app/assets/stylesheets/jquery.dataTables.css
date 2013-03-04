@@ -46,7 +46,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  * Table wrapper
  */
 .dataTables_wrapper {
-	position: relative;
+	position: right;
 	clear: both;
 	*zoom: 1;
 }
@@ -57,6 +57,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  */
 .dataTables_length {
 	float: left;
+	width:40%;
 }
 
 

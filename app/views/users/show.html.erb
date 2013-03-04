@@ -1,11 +1,17 @@
 <% provide(:title, @user.username) %>
 <h1><%= @user.username %></h1>
-<p>
-	<ul>
-		<li><%= @user.id %></li>		
-		<li><%= @user.username %></li>
-		<li><%= @user.first %></li>
-		<li><%= @user.last %></li>
-		<li><%= @user.email %></li>				
-	</ul>
-</p>
+<div class="row">
+	<div class="span1 offset4">
+		<dl class="dl-horizontal">
+			<dt>ID:</dt><dd> <%= @user.id %></dd>		
+			<dt>Username:</dt><dd><%= @user.username %></dd>
+			<dt>First Name:</dt><dd><%= @user.first %></dd>
+			<dt>Last Name:</dt><dd><%= @user.last %></dd>
+			<dt>Email:</dt><dd><%= @user.email %></dd>
+			<dt>Roles:</dt>
+			<% @user.roles.gsub(" ",'').split(',').each do |role| %>
+				<dd><%= role %></dd>
+				<% end %>				
+			</dl>
+		</div>
+</div>
