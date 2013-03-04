@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages' %>
+		
+			<%= f.label :username, "Username" %>
+			<%= f.text_field :username %>
+
+			<%= f.label :first, "First Name" %>
+			<%= f.text_field :first %>
+			
+			<%= f.label :last, "Last Name" %>
+			<%= f.text_field :last %>						
+			
+			<%= f.label :email, "Email Address" %>
+			<%= f.text_field :email %>
+			
+			<%#= f.label :password, "Password" %>
+			<%#= f.password_field :password %>						
+
+			<%#= f.label :password_confirmation, "Confirm password" %>
+			<%#= f.password_field :password_confirmation %>		
+
+			<%= f.label :roles, "User Roles" %>
+			<%= f.text_field :roles %>
+				
+			
+			<%= f.submit "Update account", class: "btn btn-large btn-primary" %>
+
+		<% end %>
+					<%= button_to "Delete", { :action => "destroy", :id => @user.id }, :class => "btn btn-large btn-danger", :method => "delete" %>
+	</div>
+</div>

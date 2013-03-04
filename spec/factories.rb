@@ -6,5 +6,6 @@ FactoryGirl.define do
     last "C"
     password "foobar"
     password_confirmation "foobar"
+    # remember_token "rememberme"
   end
 end

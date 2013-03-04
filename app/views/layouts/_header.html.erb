@@ -1,12 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Admin App", '#', id: "logo" %>
+      <%= link_to "Admin App", root_path, id: "logo" %>
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",    root_path %></li>
-          <li><%= link_to "Help",    help_path %></li>
-          <li><%= link_to "Sign in", '#' %></li>
+        <ul class="nav pull-right navbar-inverse">
+          <li class="divider-vertical"><%= link_to "Home",    root_path %></li>
+          <li class="divider-vertical"><%= link_to "Help",    help_path %></li>					
+					<% if signed_in? %>
+						<li class="divider-vertical"><%= link_to "Users", users_path %></li>
+						<li class="divider-vertical"><%= link_to "Sign out", signout_path, :method => "delete" %></li>
+					<% else %>
+          	<li class="divider-vertical"><%= link_to "Sign in", signin_path %></li>
+					<% end %>	
         </ul>
       </nav>
     </div>
