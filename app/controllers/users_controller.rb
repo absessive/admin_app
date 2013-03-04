@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :show]
+  before_filter :signed_in_user, only: [:index, :edit, :update, :show, :add_in_line]
   
   def index
     @users = User.all
@@ -64,9 +64,22 @@ class UsersController < ApplicationController
     end
   end
   
+  def add_in_line
+    new_id = User.last.id + 1
+    User.create!(:username => generate_username(10), :first => "First", :last => "Last", :email => "user#{new_id}@adminapp.com", :password => "samplepassword", :password_confirmation => "samplepassword")
+    redirect_to(users_path, :notice => "New User added")
+  end
+  
   private
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in" unless signed_in?
+    end
+    
+    def generate_username(length=6)
+      chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789'
+      username = ''
+      length.times { |i| username << chars[rand(chars.length)] }
+      username
     end
   
 end

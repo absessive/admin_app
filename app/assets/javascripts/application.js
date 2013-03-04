@@ -58,7 +58,7 @@ $(document).ready(function(){
   });
       
   $('#usertable').dataTable({ 
-    "aaSorting" : [[ 0, "asc" ]],
+    "aaSorting" : [[ 0, "desc" ]],
 		"aoColumns": [ null, null, null, null, null, { "bSortable": false }, { "bSortable": false }, 
 									{ "bSortable": false }, { "bSortable": false } ],
     "fnDrawCallback": function( oSettings ) {

@@ -4,6 +4,7 @@
 <div class="row">
 	<div class="offset1">
 		<h3>There are <%= pluralize(@users.count,"user") %>.</h3>
+				<%= button_to "Add New User", inlineadd_path, :class => "btn btn-info" %>
 		<table id="usertable">
 			<thead>
 				<tr>
