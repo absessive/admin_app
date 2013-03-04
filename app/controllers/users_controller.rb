@@ -64,10 +64,27 @@ class UsersController < ApplicationController
     end
   end
   
-  def add_in_line
-    new_id = User.last.id + 1
-    User.create!(:username => generate_username(10), :first => "First", :last => "Last", :email => "user#{new_id}@adminapp.com", :password => "samplepassword", :password_confirmation => "samplepassword")
-    redirect_to(users_path, :notice => "New User added")
+  # def add_in_line
+  #   new_id = User.last.id + 1
+  #   User.create!(:username => generate_username(10), :first => "First", :last => "Last", :email => "user#{new_id}@adminapp.com", :password => "samplepassword", :password_confirmation => "samplepassword")
+  #   redirect_to(users_path, :notice => "New User added")
+  # end
+  
+  def inlineadd
+    @user = User.new
+    @user.username = params[:user][:username]
+    @user.first = params[:user][:first]
+    @user.last = params[:user][:last]
+    @user.email = params[:user][:email]
+    @user.password = @user.password_confirmation = "samplepassword"
+    @user.roles = params[:user][:roles]
+    if @user.save
+      flash[:success] = "New user added"
+      redirect_to users_path
+    else
+      flash[:error] = "Cannot add new user"
+      redirect_to users_path
+    end
   end
   
   private
