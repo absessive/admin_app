@@ -47,6 +47,11 @@ class UsersController < ApplicationController
         format.html { redirect_to(users_path, :notice => "User was successfully updated") }
         format.json { respond_with_bip(@user) }
       else
+        
+        puts "ERROR"
+                puts "ERROR"
+                        puts "ERROR"
+                                puts "ERROR"
         format.html { render :action => "edit" }
         format.json { respond_with_bip(@user) }
       end
@@ -69,6 +74,13 @@ class UsersController < ApplicationController
   #   User.create!(:username => generate_username(10), :first => "First", :last => "Last", :email => "user#{new_id}@adminapp.com", :password => "samplepassword", :password_confirmation => "samplepassword")
   #   redirect_to(users_path, :notice => "New User added")
   # end
+  
+  def add_in_line
+    respond_to do |format|
+      #format.html { redirect_to users_path }
+      format.js
+    end
+  end
   
   def inlineadd
     @user = User.new

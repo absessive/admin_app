@@ -10,7 +10,7 @@ AdminApp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy'#, via: :delete
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
-  # match '/inlineadd', to: 'users#add_in_line'
+  match '/add_in_line', to: 'users#add_in_line'
   match 'inlineadd', to: 'users#inlineadd'
   
   # root :to => 'static_pages/home'

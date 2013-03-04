@@ -12,6 +12,7 @@
 //
 //= require jquery-1.9.1.min
 //= require jquery-ui-1.10.1.custom
+//= require jquery_ujs
 //= require jquery.purr
 //= require best_in_place
 //= require best_in_place.purr

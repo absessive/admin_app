@@ -1,0 +1,13 @@
+<tr>
+	<%= form_for @user = User.new, :url => { action: "inlineadd" }  do |f| %>
+	<td></td>
+		<td><%= f.text_field :username %></td>
+		<td><%= f.text_field :first %></td>
+		<td><%= f.text_field :last %></td>						
+		<td><%= f.text_field :email %></td>
+		<td><%= f.text_field :roles %></td>
+		<td></td>							
+		<td><%= f.submit "Add", class: "btn btn-small btn-primary" %></td>
+		<td></td>							
+	<% end %>
+</tr>
