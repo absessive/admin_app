@@ -49,10 +49,10 @@ class UsersController < ApplicationController
       else
         
         puts "ERROR"
-                puts "ERROR"
-                        puts "ERROR"
-                                puts "ERROR"
-        format.html { render :action => "edit" }
+        puts "ERROR"
+        puts "ERROR"
+        puts "ERROR"
+        #format.html { render :action => "edit" }
         format.json { respond_with_bip(@user) }
       end
     end
